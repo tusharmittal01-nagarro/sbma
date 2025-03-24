@@ -1,15 +1,15 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 import { AnnouncementSectionComponent } from './announcement-section/announcement-section.component';
-import { AccordionComponent } from './accordion/accordion.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { CarouselComponent } from './carousel/carousel.component';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
     AnnouncementSectionComponent,
-    AccordionComponent,
+    CarouselComponent,
     FormsModule,
     CommonModule,
   ],
@@ -21,12 +21,34 @@ export class HeaderComponent {
   isShopPopupVisible: boolean = false;
   hidePopupTimeout: any;
   searchTerm: string = '';
-  products = [
-    { id: 1, name: 'Apple Cider Vinegar' },
-    { id: 2, name: 'Herbal Tea' },
-    { id: 3, name: 'Organic Honey' },
-    { id: 4, name: 'Ayurvedic Supplements' },
+  lifestyleConcerns = [
+    'Pain Care',
+    'Stress Care',
+    'Piles Care',
+    'Hair Care',
+    'Liver Care',
+    'Diabetes Care',
+    'Heart Care',
+    'Cough Care',
+    'Stomach Care',
+    'Woman Care',
+    'Man Care',
+    'Immunity Care',
+    'Weight Management',
   ];
+
+  productCategories = [
+    'Patent Capsules',
+    'Ayurvedic Chyawanprash',
+    'Nourishing Granules',
+    'Single-Herb Powerhouses',
+    'Tonics 2.0',
+    'Premium Oils',
+    'Bubbly Ciders',
+    'Concentrated Drops',
+  ];
+
+  fullTreatmentCourses = ['All Products', 'Bulk Products'];
 
   toggleSearch(state: boolean) {
     this.searchActive = state;

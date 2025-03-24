@@ -5,8 +5,9 @@
     <!-- Left Navigation -->
     <nav class="nav-left">
       <div class="menu-item">
-        <a routerLink="/shop" class="nav-link">Shop</a>
-        <i class="pi pi-angle-down" (mouseenter)="showShopPopup()"></i>
+        <a routerLink="/shop" class="nav-link" (mouseenter)="showShopPopup()"
+          >Shop</a
+        >
 
         <div
           class="shop-popup"
@@ -15,8 +16,33 @@
           (mouseleave)="startHidePopupTimer()"
         >
           <div class="shop-popup-content">
-            <div *ngFor="let product of products" class="product-item">
-              <p>{{ product.name }}</p>
+            <div class="section">
+              <h3>Lifestyle Concern</h3>
+              <ul>
+                <li *ngFor="let concern of lifestyleConcerns">
+                  <a href="#">{{ concern }}</a>
+                </li>
+              </ul>
+            </div>
+            <div class="section">
+              <h3>Product Category</h3>
+              <ul>
+                <li *ngFor="let category of productCategories">
+                  <a href="#">{{ category }}</a>
+                </li>
+              </ul>
+            </div>
+            <div class="section">
+              <h3>Full Treatment Course</h3>
+              <ul>
+                <li *ngFor="let course of fullTreatmentCourses">
+                  <a href="#">{{ course }}</a>
+                </li>
+              </ul>
+              <div class="balance-unboxed">
+                <h3>Balance Unboxed:</h3>
+                <p>shop now</p>
+              </div>
             </div>
           </div>
         </div>
@@ -54,4 +80,6 @@
   </div>
 </header>
 
-<app-accordion></app-accordion>
+<main class="main">
+  <app-carousel></app-carousel>
+</main>

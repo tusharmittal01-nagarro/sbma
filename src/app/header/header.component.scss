@@ -57,9 +57,12 @@
 
 .nav-link {
   text-decoration: none;
-  color: #333;
+  color: #313d49;
   font-weight: 500;
   cursor: pointer;
+  font-weight: 500;
+  opacity: 0.9;
+  font-size: 1rem;
 }
 
 .search-container {
@@ -101,6 +104,8 @@
 }
 
 .menu-item {
+  display: flex;
+  align-items: center;
   padding: 10px 20px;
 }
 
@@ -120,15 +125,90 @@
 }
 
 .shop-popup-content {
-  background: #fbf7ed;
+  background: #fbf7ec;
   border: 1px solid #ad683f;
-  border-radius: 20px;
+  border-radius: 8px;
   box-shadow: 0 4px 60px #0000000d;
-  padding-bottom: 20px;
-  padding-top: 24px;
-  max-height: calc(80vh - 60px);
-  overflow-y: auto;
-  overflow-x: hidden;
+  padding: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.section {
+  flex: 1;
+  margin-right: 16px;
+  max-height: 200px;
+  overflow: hidden;
+  padding-right: 16px;
+  border-right: 1px solid #ad683f;
+  display: flex;
+  flex-direction: column;
+}
+
+.section:last-child {
+  margin-right: 0;
+  border-right: none;
+  padding-right: 0;
+}
+
+.section h3 {
+  color: #b85c2a;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.section ul li {
+  color: #4a4a4a;
+  margin-bottom: 4px;
+  width: 50%;
+}
+
+.section ul li a {
+  color: #4a4a4a;
+  text-decoration: none;
+  position: relative;
+  display: inline-block;
+}
+
+.section ul li a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: #4a4a4a;
+  transition: width 0.3s ease, right 0.3s ease;
+}
+
+.section ul li a:hover::after {
+  width: 100%;
+  right: 0;
+}
+
+.balance-unboxed {
+  margin-top: 24px;
+}
+
+.balance-unboxed h3 {
+  color: #b85c2a;
+  font-weight: bold;
+}
+
+.balance-unboxed p {
+  color: #b85c2a;
+  font-weight: bold;
+  font-style: italic;
 }
 
 .product-item {
@@ -162,5 +242,21 @@
 
   .logo {
     max-height: 50px;
+  }
+
+  .shop-popup-content {
+    flex-direction: column;
+  }
+
+  .section {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+    max-height: none; /* Remove max-height */
+    overflow: visible; /* Show overflow */
+  }
+
+  .section ul li {
+    width: 100%; /* Set width to 100% for single column */
   }
 }
