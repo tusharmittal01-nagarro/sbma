@@ -1,0 +1,57 @@
+<app-announcement-section></app-announcement-section>
+
+<header class="site-header">
+  <div class="nav-container" [class.search-active]="searchActive">
+    <!-- Left Navigation -->
+    <nav class="nav-left">
+      <div class="menu-item">
+        <a routerLink="/shop" class="nav-link">Shop</a>
+        <i class="pi pi-angle-down" (mouseenter)="showShopPopup()"></i>
+
+        <div
+          class="shop-popup"
+          *ngIf="isShopPopupVisible"
+          (mouseenter)="cancelHidePopupTimer()"
+          (mouseleave)="startHidePopupTimer()"
+        >
+          <div class="shop-popup-content">
+            <div *ngFor="let product of products" class="product-item">
+              <p>{{ product.name }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a routerLink="/reviews" class="nav-link">Reviews</a>
+      <a routerLink="/pathshala" class="nav-link">Learn at Pathshala</a>
+    </nav>
+
+    <!-- Center Logo -->
+    <div class="logo-container">
+      <a routerLink="/" class="logo-link">
+        <img src="sbma_logo.jpg" alt="Logo" class="logo" />
+      </a>
+    </div>
+
+    <!-- Right Navigation -->
+    <nav class="nav-right">
+      <a routerLink="/about" class="nav-link">Book Consultation</a>
+      <a routerLink="/contact" class="nav-link">Contact</a>
+      <div class="search-container" [class.expanded]="searchActive">
+        <input
+          type="text"
+          [(ngModel)]="searchTerm"
+          (blur)="toggleSearch(false)"
+          (keyup.enter)="performSearch()"
+          placeholder="Search products..."
+          class="search-input"
+          [class.active]="searchActive"
+        />
+        <button class="search-icon" (click)="toggleSearch(true)">
+          <i class="pi pi-search"></i>
+        </button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<app-accordion></app-accordion>

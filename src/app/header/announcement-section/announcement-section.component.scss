@@ -1,0 +1,35 @@
+.announcement-bar {
+  background-color: #f8d7da; /* Light background for announcement */
+  color: #721c24; /* Dark text for readability */
+  text-align: center;
+  padding: 8px 0;
+  font-size: 14px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.announcement-bar p {
+  margin: 0 40px;
+}
+
+.arrow {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 5px;
+  color: #721c24;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.arrow.left {
+  left: 10px;
+}
+
+.arrow.right {
+  right: 10px;
+}
