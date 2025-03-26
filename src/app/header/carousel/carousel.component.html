@@ -1,31 +1,15 @@
-<p-carousel
-  [value]="products"
-  [numVisible]="1"
-  [numScroll]="1"
-  [circular]="false"
-  [responsiveOptions]="responsiveOptions"
->
-  <ng-template let-product pTemplate="item">
-    <div class="border-1 surface-border border-round m-2 p-3">
-      <div class="mb-3">
-        <div class="relative mx-auto">
-          <img
-            src="https://primefaces.org/cdn/primeng/images/demo/product/{{
-              product.image
-            }}"
-            [alt]="product.name"
-            class="w-full border-round"
-          />
-        </div>
-      </div>
-      <div class="mb-3 font-medium">
-        {{ product.name }}
-      </div>
-      <div class="flex justify-content-between align-items-center">
-        <div class="mt-0 font-semibold text-xl">
-          {{ "$" + product.price }}
-        </div>
-      </div>
-    </div>
-  </ng-template>
-</p-carousel>
+<div class="carousel">
+  <p-carousel
+    [value]="products"
+    [numVisible]="1"
+    [numScroll]="1"
+    [circular]="false"
+    [responsiveOptions]="responsiveOptions"
+    [showNavigators]="true"
+    [showIndicators]="false"
+  >
+    <ng-template pTemplate="item" let-item>
+      <img class="preview-media image" [src]="item.url" alt="banner" />
+    </ng-template>
+  </p-carousel>
+</div>
